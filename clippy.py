@@ -18,6 +18,8 @@ def update_history():
         current_clipboard = pyperclip.paste()
 
         if current_clipboard in clipboard_history:
+            if current_clipboard == clipboard_history[-1]:
+                continue
             clipboard_history.remove(current_clipboard)
 
         # Add the current clipboard content to the history
